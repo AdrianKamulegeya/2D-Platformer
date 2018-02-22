@@ -17,8 +17,10 @@ public class Player : MonoBehaviour
 	private PlayerMovement movement;
 	public int fallBounndary = -20;
 	public float powerUpTimeLeft = 10f;
-
+	
 	private string previousPower = "";
+	private bool chestTriggerEntered = false;
+	private Chest currentChest;
 
 	void Awake()
 	{
@@ -55,6 +57,26 @@ public class Player : MonoBehaviour
 		{
 			DamageTaken(100);
 		}
+
+		if (Input.GetButtonDown("Submit") && chestTriggerEntered)
+		{
+				if (!currentChest.opened)
+				{
+					Debug.Log("OPEN");
+					GameMaster.PlaySound("Open Chest");
+					currentChest.OpenChest();
+				}
+				else if (!currentChest.empty)
+				{
+					Debug.Log("EMPTY");
+					//GameMaster.PlaySound("Empty Chest");
+					currentChest.EmptyChest();
+				}
+				
+			//TODO: Do some sort of chest animation
+			//TODO: Spawn some item - don't know what yet
+
+		}
 	}
 	
 	public void DamageTaken(int health)
@@ -83,6 +105,7 @@ public class Player : MonoBehaviour
 				return;
 			case "Ice Gem":
 				powers.currentPower = "Ice";
+				
 				GameMaster.PlaySound("PowerUp");
 				Destroy(col.gameObject);
 				return;
@@ -94,14 +117,19 @@ public class Player : MonoBehaviour
 			case "Slow Gem":
 				powers.currentPower = "Slow";
 				GameMaster.PlaySound("PowerUp");
-				//TODO: Slow down enemies
 				Destroy(col.gameObject);
-				return;
-			case "Chest":
-				//TODO: Do some sort of chest animation
-				//TODO: Spawn some item - don't know what yet
 				return;
 		}
 	}
-	
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		chestTriggerEntered = true;
+		currentChest = other.gameObject.GetComponent<Chest>();
+	}
+
+	private void OnTriggerExit2D(Collider2D other)
+	{
+		chestTriggerEntered = false;
+	}
 }
