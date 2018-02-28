@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 	[System.Serializable]
 	public class PlayerStats
 	{
-		public int health = 100;
+		public int health = 3;
 	}
 
 	public PlayerStats stats = new PlayerStats();
@@ -37,21 +37,6 @@ public class Player : MonoBehaviour
 
 	void Update()
 	{
-		if (powers.currentPower != "")	//if currently using a power i.e. touched a gem
-		{
-			if (powers.currentPower != previousPower)
-			{
-				previousPower = powers.currentPower;
-				ResetTimer();
-			}
-			
-			powerUpTimeLeft -= Time.deltaTime;
-			if (powerUpTimeLeft < 0)
-			{
-				powers.currentPower = "";
-				ResetTimer();
-			}
-		}
 		
 		if (transform.position.y < fallBounndary)
 		{
@@ -89,11 +74,6 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	void ResetTimer()
-	{
-		powerUpTimeLeft = 10f;
-	}
-
 	private void OnCollisionEnter2D(Collision2D col)
 	{
 		switch (col.gameObject.tag)
@@ -105,7 +85,6 @@ public class Player : MonoBehaviour
 				return;
 			case "Ice Gem":
 				powers.currentPower = "Ice";
-				
 				GameMaster.PlaySound("PowerUp");
 				Destroy(col.gameObject);
 				return;
@@ -118,6 +97,11 @@ public class Player : MonoBehaviour
 				powers.currentPower = "Slow";
 				GameMaster.PlaySound("PowerUp");
 				Destroy(col.gameObject);
+				return;
+			case "Enemy":
+				powers.currentPower = "";
+				//TODO: Add hurt sound
+				DamageTaken(1);
 				return;
 		}
 	}
