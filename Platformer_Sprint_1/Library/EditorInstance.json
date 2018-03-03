@@ -1,18 +1,9 @@
 {
 <<<<<<< HEAD
-<<<<<<< HEAD
 	"process_id" : 5765,
 	"version" : "2017.3.1f1"
 =======
 	"process_id" : 17419,
 	"version" : "2017.3.0f3"
 >>>>>>> e413702e474eb850ec5187807be7be1b5eb725af
-=======
-	"process_id" : 30499,
-	"version" : "2017.3.0f3"
-=======
-	"process_id" : 33796,
-	"version" : "2017.3.1f1"
->>>>>>> 520641f6ce8b65cd6806c67c70337e6060369586
->>>>>>> parent of e413702... Level with (mostly) working stuff
 }
