@@ -64,5 +64,8 @@ public class GameMaster : MonoBehaviour
 		audioFiles["Fireball"] = 3;
 		audioFiles["Ice"] = 4;
 		audioFiles["PowerUp"] = 5;
+		audioFiles["Open Chest"] = 6;
+		audioFiles["Empty Chest"] = 7;
 	}
+
 }

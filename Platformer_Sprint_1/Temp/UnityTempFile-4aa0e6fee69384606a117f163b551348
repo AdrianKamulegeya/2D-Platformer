@@ -181,6 +181,7 @@
 -define:UNITY_TEAM_LICENSE
 -define:CROSS_PLATFORM_INPUT
 'Assets/Scripts/Camera2DFollow.cs'
+'Assets/Scripts/Chest.cs'
 'Assets/Scripts/Enemy.cs'
 'Assets/Scripts/GameMaster.cs'
 'Assets/Scripts/MovePowerUp.cs'
