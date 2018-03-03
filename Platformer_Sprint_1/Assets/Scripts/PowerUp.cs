@@ -119,5 +119,4 @@ public class PowerUp : MonoBehaviour {
 			movement.jumpForce = initialJumpForce;
 		}
 	}
-
 }

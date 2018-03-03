@@ -13,6 +13,11 @@ public class Chest : MonoBehaviour
 	void Start () {
 		anim = GetComponent<Animator>();
 	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 
 	public void OpenChest()
 	{
@@ -22,7 +27,10 @@ public class Chest : MonoBehaviour
 
 	public void EmptyChest()
 	{
-		anim.SetBool("empty", true);
-		empty = true;
+		if (opened == true)
+		{
+			anim.SetBool("empty", true);
+			empty = true;
+		}
 	}
 }

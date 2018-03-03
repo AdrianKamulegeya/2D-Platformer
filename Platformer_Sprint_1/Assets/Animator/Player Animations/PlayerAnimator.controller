@@ -306,6 +306,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &1102462280180671346
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PlayerDeathAnim
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 113da6fa27b154e03907fca0649a8d73, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &1102483078285476554
 AnimatorState:
   serializedVersion: 5
@@ -368,7 +393,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102171774858672086}
-    m_Position: {x: 240, y: -12, z: 0}
+    m_Position: {x: 252, y: 12, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102483078285476554}
     m_Position: {x: 132, y: 192, z: 0}
@@ -377,10 +402,13 @@ AnimatorStateMachine:
     m_Position: {x: 288, y: 276, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102439822901166354}
-    m_Position: {x: 444, y: 144, z: 0}
+    m_Position: {x: 456, y: 192, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102856941942075370}
-    m_Position: {x: 480, y: -96, z: 0}
+    m_Position: {x: 720, y: 216, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102462280180671346}
+    m_Position: {x: 755, y: 281, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101241987620150960}

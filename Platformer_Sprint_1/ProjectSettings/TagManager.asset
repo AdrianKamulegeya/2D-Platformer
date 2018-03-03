@@ -11,10 +11,6 @@ TagManager:
   - Slow Gem
   - Enemy
   - Chest
-  - Undefined
-  - Fireball
-  - Iceball
-  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -27,7 +23,7 @@ TagManager:
   - Player
   - Background
   - Ground
-  - Obstacle
+  - 
   - 
   - 
   - 
